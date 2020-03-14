@@ -1,5 +1,8 @@
 package testing;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import testing.domain.Nota;
 import testing.domain.Student;
 import testing.domain.Tema;
@@ -11,9 +14,6 @@ import testing.validation.NotaValidator;
 import testing.validation.StudentValidator;
 import testing.validation.TemaValidator;
 import testing.validation.Validator;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -58,12 +58,12 @@ public class TestAddStudent {
     }
 
     @Test
-    public void testAddStudent1() {
+    public void testAddStudentSuccess() {
         assertEquals(service.saveStudent("1", "Diana", 935), 1);
     }
 
     @Test
-    public void testAddStudent2() {
+    public void testAddStudentFailure() {
         assertEquals(service.saveStudent("2", "Roland", 934), 1);
         assertEquals(service.saveStudent("2", "Roland", 934), 0);
 

@@ -65,6 +65,7 @@ public class TestAddAssignment {
 
     @Test
     public void testAddAssignmentFailure() {
-        assertEquals(service.saveTema("7", "g", 7, 8), 1);
+        assertEquals(service.saveTema("7", "g", 8, 7), 1);
+        assertEquals(service.saveTema("7", "g", 8, 7), 0);
     }
 }

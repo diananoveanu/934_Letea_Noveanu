@@ -23,7 +23,7 @@ import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestAddStudent {
+public class TestAddAssignment {
     private StudentXMLRepository studentXMLRepository;
     private NotaXMLRepository notaXMLRepository;
     private TemaXMLRepository temaXMLRepository;
@@ -58,21 +58,12 @@ public class TestAddStudent {
     }
 
     @Test
-    public void testAddStudentSuccess() {
-        assertEquals(service.saveStudent("1", "Diana", 935), 1);
+    public void testAddAssignmentSuccess() {
+        assertEquals(service.saveTema("1", "Primul Laborator", 8, 6), 1);
     }
 
     @Test
-    public void testAddStudentFailure() {
-        assertEquals(service.saveStudent("2", "Roland", 934), 1);
-        assertEquals(service.saveStudent("2", "Roland", 934), 0);
-
-//        try {
-//            service.saveStudent("3", null, 933);
-//            assertTrue(false);
-//        } catch (ValidationException e){
-////            assertTrue(e.getMessage().contains("Nume invalid! \n"));
-//            assertTrue(true);
-//        }
+    public void testAddAssignmentFailure() {
+        assertEquals(service.saveTema("7", "g", 7, 8), 1);
     }
 }

@@ -31,7 +31,7 @@ public class TestAddAssignment {
     private Service service;
 
     @Before
-    public void setup() {
+    public void setUp() {
         Validator<Student> vs = new StudentValidator();
         Validator<Nota> ns = new NotaValidator();
         Validator<Tema> ts = new TemaValidator();
@@ -48,7 +48,7 @@ public class TestAddAssignment {
         try {
             String defaultFileContent = new String(Files.readAllBytes(Paths.get("src/test/java/testing/defaultFile.xml")), StandardCharsets.UTF_8);
 
-            PrintWriter printWriter = new PrintWriter("src/test/java/testing/studenti.xml");
+            PrintWriter printWriter = new PrintWriter("src/test/java/testing/teme.xml");
 
             printWriter.print(defaultFileContent);
             printWriter.close();

@@ -126,4 +126,16 @@ public class TestAddAssignment {
     public void TC14_WBT_AddAssignment() {
         assertEquals(0, service.saveTema("10", "hw", 9, 21));
     }
+
+    @Test
+    public void testAddAssignmentSuccess() {
+
+        assertEquals(service.saveTema("1", "Primul Laborator", 8, 6), 1);
+    }
+
+    @Test
+    public void testAddAssignmentFailure() {
+        assertEquals(service.saveTema("7", "g", 8, 7), 1);
+        assertEquals(service.saveTema("7", "g", 8, 7), 0);
+    }
 }

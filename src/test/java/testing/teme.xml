@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entitati>
-<tema ID="0">
-<Descriere>hw</Descriere>
-<Deadline>5</Deadline>
-<Startline>3</Startline>
+<tema ID="1">
+<Descriere>Primul Laborator</Descriere>
+<Deadline>8</Deadline>
+<Startline>6</Startline>
 </tema>
 <tema ID="3">
 <Descriere>hw</Descriere>
@@ -20,9 +20,9 @@
 <Deadline>5</Deadline>
 <Startline>3</Startline>
 </tema>
-<tema ID="6">
-<Descriere>hw</Descriere>
-<Deadline>5</Deadline>
-<Startline>3</Startline>
+<tema ID="7">
+<Descriere>g</Descriere>
+<Deadline>8</Deadline>
+<Startline>7</Startline>
 </tema>
 </Entitati>

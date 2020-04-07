@@ -66,13 +66,73 @@ public class TestAddStudent {
     public void testAddStudentFailure() {
         assertEquals(service.saveStudent("2", "Roland", 934), 1);
         assertEquals(service.saveStudent("2", "Roland", 934), 0);
+    }
 
-//        try {
-//            service.saveStudent("3", null, 933);
-//            assertTrue(false);
-//        } catch (ValidationException e){
-////            assertTrue(e.getMessage().contains("Nume invalid! \n"));
-//            assertTrue(true);
-//        }
+    @Test
+    public void TC1_BBT_EC() {
+        assertEquals(service.saveStudent("0", "Albert", 934), 1);
+    }
+
+    @Test
+    public void TC2_BBT_EC() {
+        assertEquals(service.saveStudent(null, "Albert", 934), 0);
+    }
+
+    @Test
+    public void TC3_BBT_EC() {
+        assertEquals(service.saveStudent("0", "Albert", 938), 0);
+    }
+
+
+    @Test
+    public void TC4_BBT_EC() {
+        assertEquals(service.saveStudent("0", "Albert", 939), 0);
+    }
+
+    @Test
+    public void TC5_BBT_BVA() {
+        assertEquals(service.saveStudent("0", "Albert", 111), 1);
+    }
+
+    @Test
+    public void TC6_BBT_BVA() {
+        assertEquals(service.saveStudent("1", "Albert", 109), 0);
+    }
+
+    @Test
+    public void TC7_BBT_BVA() {
+        assertEquals(service.saveStudent("2", "Albert", 937), 1);
+
+    }
+
+    @Test
+    public void TC8_BBT_BVA() {
+        assertEquals(service.saveStudent("3", "Albert", 938), 0);
+    }
+
+    @Test
+    public void TC9_BBT_BVA() {
+        assertEquals(service.saveStudent("4", "Albert", 400), 1);
+
+    }
+
+    @Test
+    public void TC10_BBT_BVA() {
+        assertEquals(service.saveStudent("5", "Albert", -1), 0);
+    }
+
+    @Test
+    public void TC11_BBT_BVA() {
+        assertEquals(service.saveStudent("6", "akljklfjsf", 123), 1);
+    }
+
+    @Test
+    public void TC12_BBT_BVA() {
+        assertEquals(service.saveStudent("7", "", 123), 0);
+    }
+
+    @Test
+    public void TC13_BBT_BVA() {
+        assertEquals(service.saveStudent("8", null, 124), 0);
     }
 }

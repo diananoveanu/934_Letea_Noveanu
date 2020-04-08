@@ -1,5 +1,6 @@
 package testing;
 
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -45,6 +46,27 @@ public class BigBangTests {
 
     @BeforeClass
     public static void tearDown() {
+        try {
+            String defaultFileContent = new String(Files.readAllBytes(Paths.get("src/test/java/testing/defaultFile.xml")), StandardCharsets.UTF_8);
+
+            PrintWriter printWriter = new PrintWriter("src/test/java/testing/studenti.xml");
+            PrintWriter printWriter1 = new PrintWriter("src/test/java/testing/note.xml");
+            PrintWriter printWriter2 = new PrintWriter("src/test/java/testing/teme.xml");
+
+            printWriter.print(defaultFileContent);
+            printWriter1.println(defaultFileContent);
+            printWriter2.println(defaultFileContent);
+            printWriter.close();
+            printWriter1.close();
+            printWriter2.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @AfterClass
+    public static void tearDown1() {
         try {
             String defaultFileContent = new String(Files.readAllBytes(Paths.get("src/test/java/testing/defaultFile.xml")), StandardCharsets.UTF_8);
 

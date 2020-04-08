@@ -1,5 +1,6 @@
 package testing;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import testing.domain.Nota;
@@ -42,7 +43,7 @@ public class TestAddAssignment {
 
     }
 
-    @Before
+    @After
     public void tearDown() {
         try {
             String defaultFileContent = new String(Files.readAllBytes(Paths.get("src/test/java/testing/defaultFile.xml")), StandardCharsets.UTF_8);

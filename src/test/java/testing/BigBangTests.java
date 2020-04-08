@@ -112,7 +112,7 @@ public class BigBangTests {
     public void testBigBang(){
         assertEquals(service.saveStudent("2", "Alexandru", 231), 1);
         assertEquals(service.saveTema("2", "1", 8, 7), 1);
-        assertEquals(service.saveNota("2", "2", 9, 3, "good"), 1);.
+        assertEquals(service.saveNota("2", "2", 9, 3, "good"), 1);
 
     }
 }
